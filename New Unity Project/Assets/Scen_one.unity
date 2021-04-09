@@ -4882,6 +4882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items: []
+  cellContainer: {fileID: 746686014}
+  showInvent: 105
+  takeInvent: 101
 --- !u!224 &1572668495 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4016074447999676147, guid: fd8f40d95ee5f994eb00bde4edf9db3a,
