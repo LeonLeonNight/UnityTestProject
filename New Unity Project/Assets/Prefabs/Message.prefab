@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 2129936368320515767}
   - component: {fileID: 2129936368320515753}
   - component: {fileID: 2129936368320515752}
+  - component: {fileID: 8606819370081882869}
   m_Layer: 5
-  m_Name: Massage
+  m_Name: Message
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,6 +77,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &8606819370081882869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129936368320515766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46d9ec2160db34646b6962b3bab17a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2129936368320669531
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,6 +11,7 @@ public class Inventory : MonoBehaviour
     public KeyCode showInvent;
     public KeyCode takeInvent;
 
+    [Header("Message")]
     public GameObject messageManager;
     public GameObject message;
 
