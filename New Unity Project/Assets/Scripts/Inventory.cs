@@ -10,6 +10,10 @@ public class Inventory : MonoBehaviour
     public GameObject cellContainer;
     public KeyCode showInvent;
     public KeyCode takeInvent;
+
+    public GameObject massageManager;
+    public GameObject massage;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,10 +40,21 @@ public class Inventory : MonoBehaviour
             {
                 if (hit.collider.GetComponent<Item>())
                 {
+                    //вызвыли оповещение о подъеме предмета
+                    Massage(hit.collider.GetComponent<Item>());
+                    //добавили его
                     AddItem(hit.collider.GetComponent<Item>());
                 }
             }
         }
+    }
+
+    void Massage(Item currentItem)
+    {
+        //инициализируем новый объект massage
+        GameObject msgObj = Instantiate(massage);
+        //удочеряем теперь massage к massageManager
+        msgObj.transform.SetParent(massageManager.transform);
     }
 
     void AddUnStackableItem(Item currentItem)
@@ -72,7 +87,7 @@ public class Inventory : MonoBehaviour
             //находим с тем же id
             if (items[i].Id == currentItem.Id)
             {
-                //уеличиваем +1
+                //увеличиваем +1
                 items[i].CountItem++;
                 //перерисовываем экран
                 DisplayItems();
