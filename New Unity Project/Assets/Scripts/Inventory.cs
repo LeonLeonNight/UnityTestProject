@@ -11,8 +11,8 @@ public class Inventory : MonoBehaviour
     public KeyCode showInvent;
     public KeyCode takeInvent;
 
-    public GameObject massageManager;
-    public GameObject massage;
+    public GameObject messageManager;
+    public GameObject message;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +41,7 @@ public class Inventory : MonoBehaviour
                 if (hit.collider.GetComponent<Item>())
                 {
                     //вызвыли оповещение о подъеме предмета
-                    Massage(hit.collider.GetComponent<Item>());
+                    Message(hit.collider.GetComponent<Item>());
                     //добавили его
                     AddItem(hit.collider.GetComponent<Item>());
                 }
@@ -49,12 +49,20 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    void Massage(Item currentItem)
+    void Message(Item currentItem)
     {
         //инициализируем новый объект massage
-        GameObject msgObj = Instantiate(massage);
+        GameObject msgObj = Instantiate(message);
         //удочеряем теперь massage к massageManager
-        msgObj.transform.SetParent(massageManager.transform);
+        msgObj.transform.SetParent(messageManager.transform);
+        //инициализировали новый экземпляр картинки 
+        Image msgImg = msgObj.transform.GetChild(0).GetComponent<Image>();
+        //получили картинку поднятого объекта
+        msgImg.sprite = Resources.Load<Sprite>(currentItem.pathIcon);
+        //инициализировали новый экземпляр текста 
+        Text msgText = msgObj.transform.GetChild(1).GetComponent<Text>();
+        //получили текст описания поднятого объекта
+        msgText.text = currentItem.NameItem;
     }
 
     void AddUnStackableItem(Item currentItem)

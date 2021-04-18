@@ -3093,7 +3093,7 @@ GameObject:
   - component: {fileID: 1124625475}
   - component: {fileID: 1124625474}
   m_Layer: 5
-  m_Name: MassageManager
+  m_Name: MessageManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4956,6 +4956,8 @@ MonoBehaviour:
   cellContainer: {fileID: 746686014}
   showInvent: 105
   takeInvent: 101
+  massageManager: {fileID: 1124625472}
+  massage: {fileID: 2129936368320515766, guid: 1b51d84d768440145bbde3460cd28945, type: 3}
 --- !u!224 &1572668495 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4016074447999676147, guid: fd8f40d95ee5f994eb00bde4edf9db3a,
