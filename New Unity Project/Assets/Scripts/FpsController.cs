@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//https://sharpcoderblog.com/blog/unity-3d-fps-controller
+
 public class FpsController : MonoBehaviour
 {
     public float walkingSpeed = 7.5f;
@@ -22,9 +24,10 @@ public class FpsController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //получаем при старте параметры CharacterConroller
         characterController = GetComponent<CharacterController>();
 
-        // Lock cursor
+        // Lock cursor and unvisible it.
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -35,8 +38,10 @@ public class FpsController : MonoBehaviour
         // We are grounded, so recalculate move direction based on axes
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
+
         // Press Left Shift to run
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
+
         float curSpeedX = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Vertical") : 0;
         float curSpeedY = canMove ? (isRunning ? runningSpeed : walkingSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
